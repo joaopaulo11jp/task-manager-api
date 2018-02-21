@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+--- Criar banco
 
-Things you may want to cover:
+rake db:create
 
-* Ruby version
+--- Rodar migrations
 
-* System dependencies
+rake db:migrate
 
-* Configuration
+--- Instalar devise
 
-* Database creation
+rails g devise:install
 
-* Database initialization
+--- Gerar devise model
 
-* How to run the test suite
+rails g devise user
 
-* Services (job queues, cache servers, search engines, etc.)
+--- Rodar Rspec com Spring
 
-* Deployment instructions
 
-* ...
+
