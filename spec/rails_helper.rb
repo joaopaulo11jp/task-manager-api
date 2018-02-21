@@ -41,6 +41,7 @@ RSpec.configure do |config|
   end
 
   config.color = true
+  config.order = :random
 
   config.include FactoryGirl::Syntax::Methods
 
