@@ -19,6 +19,8 @@ RSpec.describe User, type: :model do
   #it { expect(subject).to respond_to(:password_confirmation) }
   #it { expect(subject).to be_valid } Vai falhar, pois o subject equivale à User.new... Ou seja: user vazio
 
+  #Refazendo com shoulda-matchers... is_expected equivale à expect(subject).
+
   it { is_expected.to respond_to(:email) }
   it { is_expected.to respond_to(:password) }
   it { is_expected.to respond_to :password_confirmation }
