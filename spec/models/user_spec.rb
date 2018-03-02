@@ -13,11 +13,15 @@ RSpec.describe User, type: :model do
 
   #Usando subject:
 
-  it { expect(subject).to respond_to(:email) }
+  #it { expect(subject).to respond_to(:email) }
   #it { expect(subject).to respond_to(:name) } Vai falhar
-  it { expect(subject).to respond_to(:password) }
-  it { expect(subject).to respond_to(:password_confirmation) }
-  #it { expect(subject).to be_valid } Vai falhar, pois o subject equivale à User.new
+  #it { expect(subject).to respond_to(:password) }
+  #it { expect(subject).to respond_to(:password_confirmation) }
+  #it { expect(subject).to be_valid } Vai falhar, pois o subject equivale à User.new... Ou seja: user vazio
+
+  it { is_expected.to respond_to(:email) }
+  it { is_expected.to respond_to(:password) }
+  it { is_expected.to respond_to :password_confirmation }
 
   
 end
