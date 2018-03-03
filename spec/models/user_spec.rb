@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     before { user.name = " " }
     #before será executado antes de cada teste do contexto
     it { expect(user).not_to be_valid }
-
+    
   end
   
   #pending "add some examples to (or delete) #{__FILE__}"
