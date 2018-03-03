@@ -13,32 +13,15 @@ RSpec.describe User, type: :model do
     before { user.name = " " }
     #before será executado antes de cada teste do contexto
     it { expect(user).not_to be_valid }
+
+  end
+
+  context 'when name is nil' do
+    before { user.name = nil }
+    
+    it { expect(user).not_to be_valid }
     
   end
-  
-  #pending "add some examples to (or delete) #{__FILE__}"
-
-  #before { @user = build(:user) }
-
-  #it { expect(@user).to respond_to(:email) }
-  #it { expect(@user).to respond_to(:name) } Vai falhar
-  #it { expect(@user).to respond_to(:password) }
-  #it { expect(@user).to respond_to(:password_confirmation) }
-  #it { expect(@user).to be_valid }
-
-  #Usando subject:
-
-  #it { expect(subject).to respond_to(:email) }
-  #it { expect(subject).to respond_to(:name) } Vai falhar
-  #it { expect(subject).to respond_to(:password) }
-  #it { expect(subject).to respond_to(:password_confirmation) }
-  #it { expect(subject).to be_valid } Vai falhar, pois o subject equivale à User.new... Ou seja: user vazio
-
-  #Refazendo com shoulda-matchers... is_expected equivale à expect(subject).
-
-  #it { is_expected.to respond_to(:email) }
-  #it { is_expected.to respond_to(:password) }
-  #it { is_expected.to respond_to :password_confirmation }
 
   
 end
