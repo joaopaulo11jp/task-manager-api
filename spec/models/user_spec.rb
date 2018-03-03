@@ -23,6 +23,5 @@ RSpec.describe User, type: :model do
     
 #  end
 
-  it { expect(user).to validate_presence_of(:name) }
   
 end
