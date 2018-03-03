@@ -7,6 +7,14 @@ RSpec.describe User, type: :model do
   #Usa-se let! para que o objeto seja criado assim que bater na linha, não seria mais LAZY...
 
   it { expect(user).to respond_to :email }
+
+  context 'when name is blank' do
+    #context agrupa os testes
+    before { user.name = " " }
+    #before será executado antes de cada teste do contexto
+    it { expect(user).not_to be_valid }
+
+  end
   
   #pending "add some examples to (or delete) #{__FILE__}"
 
