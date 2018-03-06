@@ -4,10 +4,12 @@ RSpec.describe 'Users API', type: :request do
     let!(:user){ create(:user) } #create cria usuário em banco, o build apenas na memória.
     let(:user_id){ user.id }
 
+    before{ host! "api.tasks-manager.dev" } #Pode ser qualquer um endereço, se nao encontrar considera localhost
+
     describe "GET /users/:id" do
         before do
             headers = {"Accept" => "application/vnd.taskmanager.v1"}
-            get "/users/#{user_id}", {}, headers
+            get "/users/#{user_id}", params: {}, headers: headers #Padrão do 5.1, usar params: e headers:
         end
 
         context "when the users exists" do 
