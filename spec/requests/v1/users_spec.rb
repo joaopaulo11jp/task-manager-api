@@ -17,6 +17,17 @@ RSpec.describe 'Users API', type: :request do
               user_response = JSON.parse(response.body)
               expect(user_response["id"]).to eq(user_id)
             end
+
+            it "returns status code 200" do
+              expect(response).to have_http_status(200)
+            end
+
+            it "when the user doesnt exists" do
+              let(:user_id) { 100000 } #Sobrescreve o :user_id para apenas para esse teste
+              #o before é executado a cada it, neste, o mesmo considerará user_id = 100000
+              
+              expect(response).to have_http_status(404)
+            end
         end
     end
 end
