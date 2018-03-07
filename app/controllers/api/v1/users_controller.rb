@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
           @user = User.find(params[:id])
           respond_with @user
         rescue #Tratamento de exception
-            head 404 #retornar 404
+          head 404 #retornar 404
         end
     end
 end
